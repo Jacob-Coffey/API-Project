@@ -1,5 +1,6 @@
 import { useContext } from "react"
-import { MoviesContext } from "../context/MoviesContext"
+import { MoviesContext } from "../context/MoviesContext";
+import { Link } from "react-router-dom";
 
 
 export const Genres = () => {
@@ -8,7 +9,7 @@ export const Genres = () => {
     return(
         <ul>
             {genres.map((genre, i) => {
-                return <li key={i}>{genre.name}</li>
+                return <li><Link to={'/genres'} key={i}>{genre.name}</Link></li>
             })}
         </ul>
     )
