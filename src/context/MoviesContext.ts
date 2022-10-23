@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Result } from "../models/MoviesInterface";
+import { Genre, MovieGenres, Result } from "../models/MoviesInterface";
 
 interface MoviesContextModel {
     favoriteMovies: Result[];
@@ -7,6 +7,7 @@ interface MoviesContextModel {
     removeMovie: (id: string) => void;
     moviesList: Result[];
     trendingMovies: Result[];
+    genres: Genre[];
 
 }
 
@@ -16,6 +17,7 @@ const defaultValues: MoviesContextModel = {
     removeMovie: () => {},
     moviesList: [],
     trendingMovies: [],
+    genres: [],
 
 };
 

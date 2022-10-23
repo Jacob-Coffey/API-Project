@@ -1,7 +1,7 @@
 
 import { ReactNode, useEffect, useState } from 'react';
-import { Result } from '../models/MoviesInterface';
-import { getMovies, getTrending } from '../services/APIpull';
+import { Genre, MovieGenres, Result } from '../models/MoviesInterface';
+import { getGenres, getMovies, getTrending } from '../services/APIpull';
 import { MoviesContext } from './MoviesContext';
 
 interface Props{ 
@@ -12,6 +12,7 @@ export const MoviesContextProvider = ({children}: Props) => {
     const [favoriteMovies, setFavoriteMovies] = useState<Result[]>([]);
     const [moviesList, setMoviesList] = useState<Result[]>([]);
     const [trendingMovies, setTrendingMovies] = useState<Result[]>([]);
+    const [genres, setGenres] = useState<Genre[]>([]);
 
     const addMovie = (newMovie: Result) => {
         const tempMovies = favoriteMovies.slice(0);
@@ -44,7 +45,13 @@ export const MoviesContextProvider = ({children}: Props) => {
         })
     }, []);
 
+    useEffect(() => {
+        getGenres().then((response) => {
+            setGenres(response);
+        })
+    }, []);
 
-    return <MoviesContext.Provider value={{ favoriteMovies, moviesList, addMovie, removeMovie, trendingMovies}}>{children}</MoviesContext.Provider>
+
+    return <MoviesContext.Provider value={{ favoriteMovies, moviesList, addMovie, removeMovie, trendingMovies, genres}}>{children}</MoviesContext.Provider>
 
 }
