@@ -1,8 +1,11 @@
-import { Movies } from "../models/MoviesInterface";
-import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
-    return (
+    return (<>
         <h1>Grand Circus Movies</h1>
+        <button><Link to={'/'}>Home</Link></button>
+        <button><Link to={'/genres'}>Genres</Link></button>
+        <button><Link to={'/top-rated'}>Top Rated</Link></button>
+        </>
     )
 }
