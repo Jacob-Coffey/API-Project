@@ -13,13 +13,16 @@ export const MoviesContextProvider = ({children}: Props) => {
     const [moviesList, setMoviesList] = useState<Result[]>([]);
     const [trendingMovies, setTrendingMovies] = useState<Result[]>([]);
     const [genres, setGenres] = useState<Genre[]>([]);
+    // const [movieOverview, setMovieOverview] = useState<Result[]>([]);
+
 
     const addMovie = (newMovie: Result) => {
         const tempMovies = favoriteMovies.slice(0);
 
         tempMovies.push(newMovie);
         
-        setFavoriteMovies(favoriteMovies);
+        // setFavoriteMovies(favoriteMovies);
+        setFavoriteMovies(tempMovies);
     }
 
     const removeMovie = (title: string) => {
@@ -51,6 +54,11 @@ export const MoviesContextProvider = ({children}: Props) => {
         })
     }, []);
 
+    // useEffect(() => {
+    //     getGenres().then((response) => {
+    //         setGenres(response);
+    //     })
+    // }, []);
 
     return <MoviesContext.Provider value={{ favoriteMovies, moviesList, addMovie, removeMovie, trendingMovies, genres}}>{children}</MoviesContext.Provider>
 
