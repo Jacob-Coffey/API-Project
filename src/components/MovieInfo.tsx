@@ -6,38 +6,38 @@ import { getMovieInfo } from "../services/APIpull";
 
 const posterImage = "https://image.tmdb.org/t/p/original/";
 
-interface Movies1{
-    movies: Result;
-}
 
-export const MovieInfo = ({movies}: Movies1) => {
+
+export const MovieInfo = () => {
     const [movieOverview, setMovieOverview] = useState<Result[]>([]);
 
     const id = parseInt(useParams().id!);
 
     useEffect(() => {
         getMovieInfo(id).then((response) => {
-            setMovieOverview(response);
+            const tempOverview = movieOverview.slice(0);
+            tempOverview.push(response);
+            setMovieOverview(tempOverview);
         })
     }, []);
 
     return(
         <div className="movie-info">
-            {movieOverview.map((movies) => {
+            {movieOverview.map((movie) => {
                 return <div>
                     <h2>Movie info</h2>
-                    <h3>{movies.title}</h3>
-                    <img src={posterImage + movies.poster_path}></img>
-                    <p>IMDb: {movies.vote_average}</p>
-                    <p>Release Date: {movies.release_date}</p>
+                    <h3>{movie.title}</h3>
+                    <img src={posterImage + movie.poster_path}></img>
+                    <p>IMDb: {movie.vote_average}</p>
+                    <p>Release Date: {movie.release_date}</p>
                     <br></br>
                     <h5>Overview</h5>
-                    <p>{movies.overview}</p>
+                    <p>{movie.overview}</p>
                 </div>
             })}
         </div>
     )
 }
-console.log(MovieInfo);
+
 
 export default MovieInfo;

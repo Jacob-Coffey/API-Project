@@ -35,13 +35,13 @@ export const getGenres = () => {
 };
 
 export const getMovieInfo = (id: number) => {
-    return axios.get<Movies>('https://api.themoviedb.org/3/movie/?api_key=7700a4662ffff4c1bb6fe7a6ef8d72f0', {
+    return axios.get<Result>('https://api.themoviedb.org/3/movie/${id}?api_key=7700a4662ffff4c1bb6fe7a6ef8d72f0', {
 
         params: {
             appid: process.env.REAVT_APP_API_TOKEN,
             movie_id: id
         },  
     }).then((response) => {
-        return response.data.results;
+        return response.data;
     })
 }
