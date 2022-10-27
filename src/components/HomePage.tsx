@@ -11,9 +11,6 @@ export const HomePage = () => {
 
     return (
         <div className="trending-Container">
-
-           <Link to={'/genres'}>Genres</Link>
-            <Link to={'/favoritespage'}>Favorites</Link>
          {trendingMovies.map((movie) => {
             return <div className="trending">
                     <h3>{movie.title}</h3>
