@@ -15,6 +15,7 @@ export const FavoritesPage = () => {
 
     return (
         <div className="favorite-Container">
+            {favoriteMovies.length === 0 && <h2>You currently have no favorite movies!</h2>}
          {favoriteMovies.map((movie) => {
             return <div className="trending">
                     <h3>{movie.title}</h3>

@@ -14,6 +14,7 @@ export const MoviesContextProvider = ({children}: Props) => {
     const [trendingMovies, setTrendingMovies] = useState<Result[]>([]);
     const [genres, setGenres] = useState<Genre[]>([]);
     const [topRated, setTopRated] = useState<Result[]>([]);
+
     
 
     const addMovie = (newMovie: Result) => {
