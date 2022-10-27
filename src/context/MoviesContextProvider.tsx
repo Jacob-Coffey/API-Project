@@ -1,7 +1,7 @@
 
 import { ReactNode, useEffect, useState } from 'react';
-import { Genre, MovieGenres, Result } from '../models/MoviesInterface';
-import { getGenres, getMovies, getTrending } from '../services/APIpull';
+import { Genre, Result } from '../models/MoviesInterface';
+import { getGenres, getMovies, getTopRated, getTrending } from '../services/APIpull';
 import { MoviesContext } from './MoviesContext';
 
 interface Props{ 
@@ -13,6 +13,8 @@ export const MoviesContextProvider = ({children}: Props) => {
     const [moviesList, setMoviesList] = useState<Result[]>([]);
     const [trendingMovies, setTrendingMovies] = useState<Result[]>([]);
     const [genres, setGenres] = useState<Genre[]>([]);
+    const [topRated, setTopRated] = useState<Result[]>([]);
+    
 
     const addMovie = (newMovie: Result) => {
         const tempMovies = favoriteMovies.slice(0);
@@ -33,6 +35,8 @@ export const MoviesContextProvider = ({children}: Props) => {
         setFavoriteMovies(tempMovies);
     }
 
+   
+
     useEffect(() => {
         getMovies().then((response) => {
             setMoviesList(response);
@@ -51,7 +55,13 @@ export const MoviesContextProvider = ({children}: Props) => {
         })
     }, []);
 
+    useEffect(() => {
+        getTopRated().then((response) => {
+            setTopRated(response);
+        })
+    }, []);
 
-    return <MoviesContext.Provider value={{ favoriteMovies, moviesList, addMovie, removeMovie, trendingMovies, genres}}>{children}</MoviesContext.Provider>
+
+    return <MoviesContext.Provider value={{ favoriteMovies, moviesList, addMovie, removeMovie, trendingMovies, genres, topRated}}>{children}</MoviesContext.Provider>
 
 }

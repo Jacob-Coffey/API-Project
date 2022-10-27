@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { MoviesContext } from "../context/MoviesContext";
-import '../components/HomePage.css';
+import '../CSS/HomePage.css';
 import { Link } from "react-router-dom";
 
+const imageSrc = 'https://image.tmdb.org/t/p/original/'
 
 
 export const HomePage = () => {
@@ -14,7 +15,8 @@ export const HomePage = () => {
 
     return (
         <div className="trending-Container">
-            <Link to={'/genres'}>Genres</Link>
+
+           <Link to={'/genres'}>Genres</Link>
             <Link to={'/favoritespage'}>Favorites</Link>
          {trendingMovies.map((movie) => {
             return <div className="trending">
@@ -22,6 +24,7 @@ export const HomePage = () => {
                     <span>{movie.vote_average}</span>
                     <img src={movie.poster_path}></img>
                     <button onClick={() => addMovie(movie)}>Add to Favorites</button>
+
                    </div>
          })}
         </div>

@@ -1,0 +1,8 @@
+.trending-Container img{
+    width: 100px;
+    height: 100px;
+}
+.trending{
+    width: 150px;
+    display: inline-block;
+}
