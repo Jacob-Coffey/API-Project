@@ -19,7 +19,7 @@ export const MoviesContextProvider = ({children}: Props) => {
 
         tempMovies.push(newMovie);
         
-        setFavoriteMovies(favoriteMovies);
+        setFavoriteMovies(tempMovies);
     }
 
     const removeMovie = (title: string) => {
