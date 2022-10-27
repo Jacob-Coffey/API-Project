@@ -1,0 +1,9 @@
+.top-rated-container img{
+    width: 100px;
+    height: 100px;
+}
+
+.top-rated{
+    width: 150px;
+    display: inline-block;
+}

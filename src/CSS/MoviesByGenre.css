@@ -1,0 +1,13 @@
+.by-genre{
+    width: 150px;
+    display: inline-block;
+}
+
+.by-genre img{
+    width: 100px;
+    height: 100px;
+}
+
+.by-genre-container{
+    padding-top: 10px;
+}
