@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 
 const imageSrc = 'https://image.tmdb.org/t/p/original/'
 
+
 export const HomePage = () => {
-    const { trendingMovies, moviesList } = useContext(MoviesContext);
+    const { trendingMovies, moviesList, addMovie } = useContext(MoviesContext);
 
     console.log(moviesList.length)
 
@@ -14,11 +15,16 @@ export const HomePage = () => {
 
     return (
         <div className="trending-Container">
+
+           <Link to={'/genres'}>Genres</Link>
+            <Link to={'/favoritespage'}>Favorites</Link>
          {trendingMovies.map((movie) => {
             return <div className="trending">
                     <h3>{movie.title}</h3>
-                    <span>{movie.vote_average}</span><br></br>
-                    <img src={imageSrc + movie.poster_path}></img>
+                    <span>{movie.vote_average}</span>
+                    <img src={movie.poster_path}></img>
+                    <button onClick={() => addMovie(movie)}>Add to Favorites</button>
+
                    </div>
          })}
         </div>
