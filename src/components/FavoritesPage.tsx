@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { MoviesContext } from "../context/MoviesContext";
+import '../components/FavoritesPage.css'
 
 export const FavoritesPage = () => {
     const { favoriteMovies, moviesList, removeMovie } = useContext(MoviesContext);
+    
 
     console.log(moviesList.length)
 
