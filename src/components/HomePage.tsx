@@ -9,10 +9,6 @@ const imageSrc = 'https://image.tmdb.org/t/p/original/'
 export const HomePage = () => {
     const { trendingMovies, moviesList, addMovie } = useContext(MoviesContext);
 
-    console.log(moviesList.length)
-
-   
-
     return (
         <div className="trending-Container">
 
@@ -21,10 +17,10 @@ export const HomePage = () => {
          {trendingMovies.map((movie) => {
             return <div className="trending">
                     <h3>{movie.title}</h3>
-                    <span>{movie.vote_average}</span>
-                    <img src={movie.poster_path}></img>
+                    <span>{movie.vote_average}</span><br></br>
+                    <img src={imageSrc + movie.poster_path}></img>
+                    <Link to={`/movieinfo/${movie.id}`}><button>View More</button></Link>                     
                     <button onClick={() => addMovie(movie)}>Add to Favorites</button>
-
                    </div>
          })}
         </div>

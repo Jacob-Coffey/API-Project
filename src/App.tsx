@@ -9,6 +9,7 @@ import {FavoritesPage} from './components/FavoritesPage';
 
 import { TopRated } from './components/TopRated';
 import { MoviesByGenre } from './components/MoviesByGenre';
+import MovieInfo from './components/MovieInfo';
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/genres' element={<Genres></Genres>}></Route>
           <Route path='/top-rated' element={<TopRated></TopRated>}></Route>
           <Route path='/genres/:id' element={<MoviesByGenre></MoviesByGenre>}></Route>
+          <Route path='/movieinfo/:id' element={<MovieInfo></MovieInfo>}></Route>
           <Route path='*' element={<HomePage></HomePage>}></Route>
 
         </Routes>
