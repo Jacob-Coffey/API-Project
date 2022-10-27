@@ -13,9 +13,10 @@ export const TopRated = () => {
                 return  <div className="top-rated">
                         <h3>{top.title}</h3>
                         <span>{top.vote_average}</span><br></br>
-                        <img src={imageSrc + top.poster_path}></img>
+                        <img src={imageSrc + top.poster_path}/>
                         </div>
             })}
         </div>
-    )
+            )
 }
+    

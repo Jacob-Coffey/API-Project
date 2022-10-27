@@ -6,6 +6,7 @@ export const Header = () => {
         <button><Link to={'/'}>Home</Link></button>
         <button><Link to={'/genres'}>Genres</Link></button>
         <button><Link to={'/top-rated'}>Top Rated</Link></button>
+        <button><Link to={'/search'}>Search</Link></button>
         </>
     )
 }

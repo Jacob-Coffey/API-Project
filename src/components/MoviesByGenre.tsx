@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Result } from "../models/MoviesInterface";
 import { getMoviesByGenre } from "../services/APIpull";
+import { Link } from "react-router-dom";
 import '../CSS/MoviesByGenre.css';
 
 const imageSrc = 'https://image.tmdb.org/t/p/original/';
