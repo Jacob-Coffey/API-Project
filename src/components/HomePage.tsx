@@ -19,6 +19,7 @@ export const HomePage = () => {
                     <h3>{movie.title}</h3>
                     <span>{movie.vote_average}</span><br></br>
                     <img src={imageSrc + movie.poster_path}></img>
+                    <Link to={`/movieinfo/${movie.id}`}><button>View More</button></Link> 
                    </div>
          })}
         </div>
