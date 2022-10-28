@@ -1,8 +1,9 @@
 .genres-container button{
-    width: 100%;
+    width: 50%;
 }
 
 .genres-container {
     padding-top: 10px;
-    
+    background-color: rgb(41, 41, 85);
+    height: 100vh;  
 }
