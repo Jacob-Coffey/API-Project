@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { Result } from "../models/MoviesInterface";
 import { getMovieInfo } from "../services/APIpull";
+import '../CSS/MovieInfo.css';
 
 const posterImage = "https://image.tmdb.org/t/p/original/";
 
@@ -22,16 +23,16 @@ export const MovieInfo = () => {
     }, []);
 
     return(
-        <div className="movie-info">
+        <div className="movie-info">   
             {movieOverview.map((movie) => {
                 return <div>
-                    <h2>Movie info</h2>
-                    <h3>{movie.title}</h3>
-                    <img src={posterImage + movie.poster_path}></img>
+                    {/* <h2>Movie info</h2> */}
+                    <h2>{movie.title}</h2>
+                    <img className="movie-img" src={posterImage + movie.poster_path}></img>
                     <p>IMDb: {movie.vote_average}</p>
                     <p>Release Date: {movie.release_date}</p>
                     <br></br>
-                    <h5>Overview</h5>
+                    <h2>Overview</h2>
                     <p>{movie.overview}</p>
                 </div>
             })}

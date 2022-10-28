@@ -17,7 +17,7 @@ export const TopRated = () => {
                         <span>{top.vote_average}</span><br></br>
                         <img src={imageSrc + top.poster_path}/>
                         <Link to={`/movieinfo/${top.id}`}><button>View More</button></Link>  
-                        <button onClick={() => addMovie(top)}>Add to Favorites</button>
+                        <button className="favorite-btn" onClick={() => addMovie(top)}>Add to Favorites</button>
                         </div>
             })}
         </div>

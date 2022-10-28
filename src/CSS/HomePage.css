@@ -2,7 +2,21 @@
     width: 100px;
     height: 100px;
 }
+
 .trending{
     width: 150px;
     display: inline-block;
 }
+
+.trending-Container{
+    background-color: rgb(41, 41, 85);
+    color: white;
+    height: 100vh;
+}
+
+button{
+    background-color: goldenrod;
+    /* background-color: rgb(41, 41, 85); */
+    color: black;
+}
+
