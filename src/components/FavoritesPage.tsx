@@ -16,12 +16,12 @@ export const FavoritesPage = () => {
     return (
         <div className="favorite-Container">
             {favoriteMovies.length === 0 && <h2>You currently have no favorite movies!</h2>}
-         {favoriteMovies.map((movie) => {
-            return <div className="trending">
-                    <h3>{movie.title}</h3>
-                    <span>{movie.vote_average}</span>
-                    <img src={imageSrc + movie.poster_path}></img>
-                    <button onClick={() => removeMovie(movie.title)}>Remove from Favorites</button>
+         {favoriteMovies.map((movie, i) => {
+            return <div className="trending" key={i}>
+                    <h3 key={i}>{movie.title}</h3>
+                    <img src={imageSrc + movie.poster_path} key={i}></img><br></br>
+                    {movie.vote_average >= 6.5 && <div id="heart"></div>}{movie.vote_average >= 7.5 && <div id="heart"></div>}{movie.vote_average >= 8.5 && <div id="heart"></div>}<br></br>
+                    <button onClick={() => removeMovie(movie.title)} key={i}>Remove from Favorites</button>
                    </div>
          })}
         </div>
