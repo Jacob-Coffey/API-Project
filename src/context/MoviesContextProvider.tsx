@@ -20,16 +20,18 @@ export const MoviesContextProvider = ({children}: Props) => {
 
     const addMovie = (newMovie: Result) => {
         const tempMovies = favoriteMovies.slice(0);
-
-        tempMovies.push(newMovie);
         newMovie.favorites = true;
+        tempMovies.push(newMovie);
+        
         setFavoriteMovies(tempMovies);
     }
 
     const removeMovie = (title: string) => {
         const tempMovies = favoriteMovies.slice(0);
         let index = tempMovies.findIndex((element) => {
-            element.favorites = false;
+            if(element.title === title){
+                element.favorites = false;
+            }
             return element.title === title;
         })
 
