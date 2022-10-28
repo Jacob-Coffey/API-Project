@@ -14,6 +14,7 @@ export const MoviesContextProvider = ({children}: Props) => {
     const [trendingMovies, setTrendingMovies] = useState<Result[]>([]);
     const [genres, setGenres] = useState<Genre[]>([]);
     const [topRated, setTopRated] = useState<Result[]>([]);
+    
 
     
 
@@ -21,19 +22,21 @@ export const MoviesContextProvider = ({children}: Props) => {
         const tempMovies = favoriteMovies.slice(0);
 
         tempMovies.push(newMovie);
-        
+        newMovie.favorites = true;
         setFavoriteMovies(tempMovies);
     }
 
     const removeMovie = (title: string) => {
         const tempMovies = favoriteMovies.slice(0);
         let index = tempMovies.findIndex((element) => {
-            element.title = title;
+            element.favorites = false;
+            return element.title === title;
         })
 
-        tempMovies.splice(index);
+        tempMovies.splice(index, 1);
 
         setFavoriteMovies(tempMovies);
+       
     }
 
    
