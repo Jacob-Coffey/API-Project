@@ -4,22 +4,21 @@
 }
 
 .top-rated{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    width: 150px;
+    display: inline-block;
 }
 
 .top-rated-container{
     background-color: rgb(41, 41, 85);
-    display: block;
+    color: white;
     height: 100vh;
-    /* flex-wrap: wrap; */
-    /* display: grid; */
-    /* display: inline-block; */
-
 }
 
-.favorite-btn{
-    height: 36px;
+button{
+    background-color: goldenrod;
+    color: black;
+}
+
+#star{
+  color: goldenrod;
 }

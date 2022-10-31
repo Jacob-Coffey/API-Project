@@ -14,6 +14,7 @@ export const MoviesContextProvider = ({children}: Props) => {
     const [trendingMovies, setTrendingMovies] = useState<Result[]>([]);
     const [genres, setGenres] = useState<Genre[]>([]);
     const [topRated, setTopRated] = useState<Result[]>([]);
+    const [currentPage, setCurrentPage] = useState<number>(1)
     
 
     
@@ -50,7 +51,7 @@ export const MoviesContextProvider = ({children}: Props) => {
     }, []);
 
     useEffect(() => {
-        getTrending().then((response) => {
+        getTrending(currentPage).then((response) => {
             setTrendingMovies(response);
         })
     }, []);

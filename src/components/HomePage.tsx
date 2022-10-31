@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MoviesContext } from "../context/MoviesContext";
 import '../CSS/HomePage.css';
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ const imageSrc = 'https://image.tmdb.org/t/p/original/'
 
 export const HomePage = () => {
     const { trendingMovies, addMovie, removeMovie } = useContext(MoviesContext);
+    
     const round = (number: number, places: number, mode: number) => {
         let mult = parseInt("1" + "0".repeat(places));
         number = number * mult;
@@ -33,7 +34,8 @@ export const HomePage = () => {
                     <button onClick={() => removeMovie(movie.title)}>Remove from favorites</button>
                     }  
                    </div>
-         })}
+         }) 
+         }
         </div>
     )
 
