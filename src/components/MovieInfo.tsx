@@ -25,15 +25,16 @@ export const MovieInfo = () => {
     return(
         <div className="movie-info">   
             {movieOverview.map((movie) => {
-                return <div>
+                return <div className="movie-container">
                     {/* <h2>Movie info</h2> */}
-                    <h2>{movie.title}</h2>
+                    <h1 className="movie-title">{movie.title}</h1>
                     <img className="movie-img" src={posterImage + movie.poster_path}></img>
                     <p>IMDb: {movie.vote_average}</p>
                     <p>Release Date: {movie.release_date}</p>
-                    <br></br>
+                    {/* <br></br> */}
+                    <p></p>
                     <h2>Overview</h2>
-                    <p>{movie.overview}</p>
+                    <p className="overview-description">{movie.overview}</p>
                 </div>
             })}
         </div>

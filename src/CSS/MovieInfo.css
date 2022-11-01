@@ -1,22 +1,26 @@
 body{
     margin: auto;
     text-align: center;
+    background-color: rgb(41, 41, 85);
+}
+
+.movie-container{
+    margin: auto;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(134,47,247,1) 37%, rgba(0,212,255,1) 100%);
+    
+}
+.movie-info{
+    font-family: 'Kanit', sans-serif;
 
 }
 .movie-img{
     width: 400px;
     height: 500px;
-    /* float: left;s */
-    /* padding: 50px; */
     border: solid black 10px ;
-}
-
-p{
-    padding-left: 100px;
-    padding-right: 100px;
-    
 }
 
 button{
@@ -27,4 +31,12 @@ button{
     padding: auto;
     border-radius: 13%;
     border-color: black;
+}
+
+.movie-title{
+    color: black;
+}
+
+.overview-description{
+    padding: 0px 200px;
 }

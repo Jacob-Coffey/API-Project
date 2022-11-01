@@ -17,8 +17,8 @@ export const HomePage = () => {
                     <img src={imageSrc + movie.poster_path}></img>
                     <br></br>
                     <span>{movie.vote_average}</span><br></br>
-                    <Link to={`/movieinfo/${movie.id}`}><button>View More</button></Link>                     
-                    <button onClick={() => addMovie(movie)}>Add to Favorites</button>
+                    <Link to={`/movieinfo/${movie.id}`}><button className="btn">View More</button></Link>                     
+                    <button className="btn" onClick={() => addMovie(movie)}>Add to Favorites</button>
                    </div>
          })}
         </div>
