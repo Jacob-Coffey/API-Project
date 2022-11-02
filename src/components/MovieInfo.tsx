@@ -11,7 +11,7 @@ const posterImage = "https://image.tmdb.org/t/p/original/";
 
 
 export const MovieInfo = () => {
-    const { addMovie, removeMovie } = useContext(MoviesContext);
+    const { addMovie, removeMovie,  } = useContext(MoviesContext);
     const [movieOverview, setMovieOverview] = useState<Result[]>([]);
 
     const id = parseInt(useParams().id!);
