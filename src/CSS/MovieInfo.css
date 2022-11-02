@@ -34,5 +34,21 @@ button{
 }
 
 .overview-description{
-    padding: 0px 200px;
+    padding: 0px 100px;
+}
+
+
+@media screen and (min-width: 768px){
+    .movie-container{
+        margin: auto;
+        height: 100vh;
+        padding: 20px;
+        text-align: center;
+        background: rgb(2,0,36);
+        background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(134,47,247,1) 37%, rgba(0,212,255,1) 100%);    
+    }
+
+    .overview-description{
+        padding: 0px 200px;
+    }  
 }

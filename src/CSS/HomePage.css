@@ -1,10 +1,16 @@
-.trending-Container img{
+/* .trending-Container img{
     width: 100px;
     height: 100px;
     border: solid goldenrod 2px ;
+} */
+
+.trending-Container img{
+    width: 250px;
+    height: 325px;
+    border: solid goldenrod 5px ;
 }
 
-.trending{
+/* .trending{
     width: 350px;
     height: 250px;
     display: inline-block;
@@ -13,8 +19,18 @@
     padding: 3px;
     border-radius: 3%;
     border: solid rgb(141, 141, 226) 1px;
-}
+} */
 
+.trending{
+    width: 500px;
+    height: 475px;
+    display: inline-block;
+    background-color: rgb(59, 59, 124);
+    margin: 8px;
+    padding: 3px;
+    border-radius: 3%;
+    border: solid rgb(141, 141, 226) 1px;
+}
 .trending-Container{
     background-color: rgb(41, 41, 85);
     color: white;
@@ -43,15 +59,44 @@
 
 @media screen and (min-width: 768px){
 
-.trending-Container{
-    background-color: rgb(41, 41, 85);
-    color: white;
-    height: 100%;
-    padding: 30px 30px;
+    .trending-Container{
+        background-color: rgb(41, 41, 85);
+        color: white;
+        height: 100%;
+        padding: 30px 30px;
 
+    }
+
+    .trending{
+        width: 350px;
+        height: 250px;
+        display: inline-block;
+        background-color: rgb(59, 59, 124);
+        margin: 8px;
+        padding: 3px;
+        border-radius: 3%;
+        border: solid rgb(141, 141, 226) 1px;
+    }
+
+    .trending-Container img{
+        width: 100px;
+        height: 100px;
+        border: solid goldenrod 2px ;
+    }
+
+    .trending button{
+        width: 150px;
+        height: 47px;
+        border-radius: 5%;
+        background-color: goldenrod;
+        color: black;
+        font-size: 13px;
+        font-weight: 300;
+        font-family: 'Kanit', sans-serif;
+        margin: 2px; 
+    }
 }
 
-}
 
 #star{
   color: goldenrod;
