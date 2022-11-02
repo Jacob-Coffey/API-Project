@@ -33,7 +33,7 @@ export const HomePage = () => {
                     <Link to={`/movieinfo/${movie.id}`}><button>View More</button></Link>
                     {!movie.favorites ?
                     <button onClick={() => addMovie(movie)}>Add to favorites</button> :
-                    <button onClick={() => removeMovie(movie.title)}>Remove from favorites</button>
+                    <button onClick={() => removeMovie(movie.title)}>Remove movie</button>
                     }  
                    </div>
          }) 

@@ -16,7 +16,8 @@ export const TopRated = () => {
                  const average = 6 < top.vote_average && top.vote_average <= 7;
                  const great = top.vote_average > 7;
                 return  <div className="top-rated" key={i}>
-                        <h3 key={i}>{top.title}</h3>
+                        {top.title.length > 20 ? <h3>{top.title.slice(0, 20) + '...'}</h3> : 
+                        <h3>{top.title}</h3>}
                         <img src={imageSrc + top.poster_path} key={i}/><br></br>
                         {sucks && <span id="star">☆</span>}
                         {average && <><span id="star">☆</span><span id="star">☆</span></>}
@@ -25,7 +26,7 @@ export const TopRated = () => {
                         <Link to={`/movieinfo/${top.id}`} key={i}><button>View More</button></Link>  
                         {!top.favorites ?
                     <button onClick={() => addMovie(top)}>Add to favorites</button> :
-                    <button onClick={() => removeMovie(top.title)}>Remove from favorites</button>
+                    <button onClick={() => removeMovie(top.title)}>Remove movie</button>
                     } 
                         </div>
             })}

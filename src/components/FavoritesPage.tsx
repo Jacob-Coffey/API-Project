@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MoviesContext } from "../context/MoviesContext";
+import { Link } from "react-router-dom";
 import '../CSS/FavoritesPage.css'
 
 const imageSrc = 'https://image.tmdb.org/t/p/original/'
@@ -11,7 +12,7 @@ export const FavoritesPage = () => {
     return (
         <div className="favorite-container">
             {favoriteMovies.length === 0 && <><br></br>
-            <h2>You currently have no favorite movies!</h2></>}
+            <h2>You currently have no favorite movies!</h2></>}  
          {favoriteMovies.map((movie, i) => {
              const sucks = movie.vote_average <= 6;
              const average = 6 < movie.vote_average && movie.vote_average <= 7;
@@ -24,7 +25,8 @@ export const FavoritesPage = () => {
                     {average && <><span id="star">☆</span><span id="star">☆</span></>}
                     {great && <><span id="star">☆</span><span id="star">☆</span><span id="star">☆</span></>}
                     <br></br>
-                    <button onClick={() => removeMovie(movie.title)} key={i}>Remove from Favorites</button>
+                    <Link to={`/movieinfo/${movie.id}`}><button>View More</button></Link> 
+                    <button onClick={() => removeMovie(movie.title)} key={i}>Remove movie</button>
                     </div>
          })}
         </div>

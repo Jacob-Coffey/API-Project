@@ -68,6 +68,6 @@ export const MoviesContextProvider = ({children}: Props) => {
     }, []);
 
 
-    return <MoviesContext.Provider value={{ favoriteMovies, moviesList, addMovie, removeMovie, trendingMovies, genres, topRated}}>{children}</MoviesContext.Provider>
+    return <MoviesContext.Provider value={{ favoriteMovies, moviesList, addMovie, removeMovie, trendingMovies, genres, topRated }}>{children}</MoviesContext.Provider>
 
 }
