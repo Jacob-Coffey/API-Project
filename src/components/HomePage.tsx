@@ -28,11 +28,17 @@ export const HomePage = () => {
                     {average && <><span id="star">☆</span><span id="star">☆</span></>}
                     {great && <><span id="star">☆</span><span id="star">☆</span><span id="star">☆</span></>}
                     <br></br>
+<<<<<<< HEAD
+                    <span>{movie.vote_average}</span><br></br>
+                    <Link to={`/movieinfo/${movie.id}`}><button className="btn">View More</button></Link>                     
+                    <button className="btn" onClick={() => addMovie(movie)}>Add to Favorites</button>
+=======
                     <Link to={`/movieinfo/${movie.id}`}><button>View More</button></Link>
                     {!movie.favorites ?
                     <button onClick={() => addMovie(movie)}>Add to favorites</button> :
                     <button onClick={() => removeMovie(movie.title)}>Remove from favorites</button>
                     }  
+>>>>>>> main
                    </div>
          }) 
          }

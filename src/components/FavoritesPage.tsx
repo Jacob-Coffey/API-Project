@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { MoviesContext } from "../context/MoviesContext";
-import '../components/FavoritesPage.css'
+import '../CSS/FavoritesPage.css'
 
 const imageSrc = 'https://image.tmdb.org/t/p/original/'
 
