@@ -10,6 +10,7 @@ export const TopRated = () => {
 
     return (
         <div className="top-rated-container">
+            <h2>Top Rated Movies</h2>
             {topRated.map((top, i) => {
                  const sucks = top.vote_average <= 6;
                  const average = 6 < top.vote_average && top.vote_average <= 7;
