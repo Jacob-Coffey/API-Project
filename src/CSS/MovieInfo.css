@@ -3,6 +3,7 @@ body{
     background-color: rgb(41, 41, 85);
 }
 .movie-container{
+    margin: auto;
     height: 100vh;
     padding: 20px;
     /* text-align: center; */
@@ -49,6 +50,6 @@ button{
     }
 
     .overview-description{
-        padding: 0px 280px;
+        padding: 0px 200px;
     }  
 }
