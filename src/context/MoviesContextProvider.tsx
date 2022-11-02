@@ -41,7 +41,6 @@ export const MoviesContextProvider = ({children}: Props) => {
         setFavoriteMovies(tempMovies);
        
     }
-
    
 
     useEffect(() => {

@@ -22,7 +22,8 @@ export const HomePage = () => {
             const average = 6 < movie.vote_average && movie.vote_average <= 7;
             const great = movie.vote_average > 7;
             return <div className="trending" key={i}>
-                    <h3 key={i}>{movie.title}</h3>
+                    {movie.title.length > 20 ? <h3>{movie.title.slice(0, 20) + '...'}</h3> : 
+                        <h3>{movie.title}</h3>}
                     <img src={imageSrc + movie.poster_path} key={i}></img><br></br>
                     {sucks && <span id="star">☆</span>}
                     {average && <><span id="star">☆</span><span id="star">☆</span></>}

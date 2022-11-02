@@ -24,10 +24,16 @@ export const MoviesByGenre = () => {
         return(
             <div className="by-genre-container">
                 {moviesList.map((movie, i) => {
+                     const sucks = movie.vote_average <= 6;
+                     const average = 6 < movie.vote_average && movie.vote_average <= 7;
+                     const great = movie.vote_average > 7;
                     return <div className="by-genre">
-                        <h2>{movie.title}</h2>
+                        {movie.title.length > 20 ? <h3>{movie.title.slice(0, 20) + '...'}</h3> : 
+                        <h3>{movie.title}</h3>}
                         <img src={imageSrc + movie.poster_path}></img><br></br>
-                        {movie.vote_average >= 6.5 && <div id="heart"></div>}{movie.vote_average >= 7.5 && <div id="heart"></div>}{movie.vote_average >= 8.5 && <div id="heart"></div>}<br></br>
+                        {sucks && <span id="star">☆</span>}
+                        {average && <><span id="star">☆</span><span id="star">☆</span></>}
+                        {great && <><span id="star">☆</span><span id="star">☆</span><span id="star">☆</span></>}<br></br>
                         <Link to={`/movieinfo/${movie.id}`}><button>View More</button></Link>  
                         {!movie.favorites ?
                     <button onClick={() => addMovie(movie)} key={i}>Add to favorites</button> :

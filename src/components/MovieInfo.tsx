@@ -38,9 +38,8 @@ export const MovieInfo = () => {
                     {great && <><span id="star">☆</span><span id="star">☆</span><span id="star">☆</span></>}
                     <br></br>
                     <p>Release Date: {movie.release_date}</p>
-                    <br></br>
                     <h2>Overview</h2>
-                    <p>{movie.overview}</p>
+                    <p className="overview-description">{movie.overview}</p>
                 </div>
             
             })}

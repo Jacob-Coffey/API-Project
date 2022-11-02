@@ -1,10 +1,10 @@
-.by-genre-container img{
+.favorite-container img{
     width: 100px;
     height: 100px;
     border: solid goldenrod 2px ;
 }
 
-.by-genre{
+.favorite{
     width: 350px;
     height: 220px;
     display: inline-block;
@@ -15,7 +15,7 @@
     border: solid rgb(141, 141, 226) 1px;
 }
 
-.by-genre-container{
+.favorite-container{
     background-color: rgb(41, 41, 85);
     color: white;
     height: 270vh;
@@ -24,11 +24,11 @@
 
 }
 
-.by-genre-container button{
+.favorite button{
     width: 133px;
     height: 30px;
     border-radius: 5%;
-    background-color: rgb(41, 41, 85);
+    background-color: goldenrod;
     color: black;
     font-size: 15px;
     font-weight: 300;
@@ -38,8 +38,8 @@
 }
 
 
-.by-genre-container button:hover{
-    background-color: goldenrod;
+.favorite button:hover{
+    background-color: rgb(41, 41, 85);
     color: white;
 }
 
@@ -50,7 +50,7 @@
     height: 100vh;
 } */
 
-.by-genre-container{
+.favorite-container{
     background-color: rgb(41, 41, 85);
     color: white;
     height: 100vh;
@@ -63,3 +63,4 @@
 #star{
   color: goldenrod;
 }
+
