@@ -14,12 +14,14 @@ export const MoviesContextProvider = ({children}: Props) => {
     const [trendingMovies, setTrendingMovies] = useState<Result[]>([]);
     const [genres, setGenres] = useState<Genre[]>([]);
     const [topRated, setTopRated] = useState<Result[]>([]);
+    const [currentPage, setCurrentPage] = useState<number>(1)
+    
 
     
 
     const addMovie = (newMovie: Result) => {
         const tempMovies = favoriteMovies.slice(0);
-
+        newMovie.favorites = true;
         tempMovies.push(newMovie);
         
         setFavoriteMovies(tempMovies);
@@ -28,14 +30,17 @@ export const MoviesContextProvider = ({children}: Props) => {
     const removeMovie = (title: string) => {
         const tempMovies = favoriteMovies.slice(0);
         let index = tempMovies.findIndex((element) => {
-            element.title = title;
+            if(element.title === title){
+                element.favorites = false;
+            }
+            return element.title === title;
         })
 
-        tempMovies.splice(index);
+        tempMovies.splice(index, 1);
 
         setFavoriteMovies(tempMovies);
+       
     }
-
    
 
     useEffect(() => {
@@ -45,7 +50,7 @@ export const MoviesContextProvider = ({children}: Props) => {
     }, []);
 
     useEffect(() => {
-        getTrending().then((response) => {
+        getTrending(currentPage).then((response) => {
             setTrendingMovies(response);
         })
     }, []);

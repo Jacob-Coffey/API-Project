@@ -23,7 +23,6 @@ function App() {
         <Routes>
 
           <Route path='/favoritespage' element={<FavoritesPage />} />
-
           <Route path='/' element={<HomePage></HomePage>}></Route>
           <Route path='/genres' element={<Genres></Genres>}></Route>
           <Route path='/top-rated' element={<TopRated></TopRated>}></Route>

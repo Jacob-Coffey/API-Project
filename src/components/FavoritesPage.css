@@ -1,14 +1,14 @@
-.top-rated-container img{
+.favorite-container img{
     width: 100px;
     height: 100px;
 }
 
-.top-rated{
+.favorite{
     width: 150px;
     display: inline-block;
 }
 
-.top-rated-container{
+.favorite-container{
     background-color: rgb(41, 41, 85);
     color: white;
     height: 100vh;

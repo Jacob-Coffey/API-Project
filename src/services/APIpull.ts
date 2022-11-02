@@ -41,11 +41,11 @@ export const getMovie = (id: number) => {
 
 
 
-export const getTrending = () => {
+export const getTrending = (page: number) => {
     return axios.get<Movies>('https://api.themoviedb.org/3/trending/movie/day?api_key=7700a4662ffff4c1bb6fe7a6ef8d72f0', {
         params: {
             appid: process.env.REACT_APP_API_TOKEN,
-            page: 1
+            page: page
         },
     }).then((response) => {
         return response.data.results

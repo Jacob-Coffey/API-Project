@@ -37,6 +37,7 @@ button{
     justify-content: space-between;
 }
 
+<<<<<<< HEAD
 button:hover{
     background-color: goldenrod;
 }
@@ -57,3 +58,8 @@ button:hover{
 }
 
 }
+=======
+#star{
+  color: goldenrod;
+}
+>>>>>>> main

@@ -1,5 +1,7 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import "../CSS/Header.css"
+import { MoviesContext } from "../context/MoviesContext";
+import "../CSS/Header.css";
 
 export const Header = () => {
     return (

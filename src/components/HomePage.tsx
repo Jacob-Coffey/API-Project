@@ -5,22 +5,43 @@ import { Link } from "react-router-dom";
 
 const imageSrc = 'https://image.tmdb.org/t/p/original/'
 
-
 export const HomePage = () => {
-    const { trendingMovies, moviesList, addMovie } = useContext(MoviesContext);
+    const { trendingMovies, addMovie, removeMovie } = useContext(MoviesContext);
+    
+    const round = (number: number, places: number, mode: number) => {
+        let mult = parseInt("1" + "0".repeat(places));
+        number = number * mult;
+        if(mode === 1){number = Math.round(number)}
+        return number / mult;
+    };
 
     return (
         <div className="trending-Container">
-         {trendingMovies.map((movie) => {
-            return <div className="trending">
-                    <h3>{movie.title}</h3>
-                    <img src={imageSrc + movie.poster_path}></img>
+         {trendingMovies.map((movie, i) => {
+            const sucks = movie.vote_average <= 6;
+            const average = 6 < movie.vote_average && movie.vote_average <= 7;
+            const great = movie.vote_average > 7;
+            return <div className="trending" key={i}>
+                    <h3 key={i}>{movie.title}</h3>
+                    <img src={imageSrc + movie.poster_path} key={i}></img><br></br>
+                    {sucks && <span id="star">☆</span>}
+                    {average && <><span id="star">☆</span><span id="star">☆</span></>}
+                    {great && <><span id="star">☆</span><span id="star">☆</span><span id="star">☆</span></>}
                     <br></br>
+<<<<<<< HEAD
                     <span>{movie.vote_average}</span><br></br>
                     <Link to={`/movieinfo/${movie.id}`}><button className="btn">View More</button></Link>                     
                     <button className="btn" onClick={() => addMovie(movie)}>Add to Favorites</button>
+=======
+                    <Link to={`/movieinfo/${movie.id}`}><button>View More</button></Link>
+                    {!movie.favorites ?
+                    <button onClick={() => addMovie(movie)}>Add to favorites</button> :
+                    <button onClick={() => removeMovie(movie.title)}>Remove from favorites</button>
+                    }  
+>>>>>>> main
                    </div>
-         })}
+         }) 
+         }
         </div>
     )
 
