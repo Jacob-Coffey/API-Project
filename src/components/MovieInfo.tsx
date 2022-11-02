@@ -26,12 +26,12 @@ export const MovieInfo = () => {
 
     return(
         <div className="movie-info"> 
-        <h2>Movie Info</h2>  
             {movieOverview.map((movie) => {
                 const sucks = movie.vote_average <= 6;
                 const average = 6 < movie.vote_average && movie.vote_average <= 7;
                 const great = movie.vote_average > 7;
-                return <div>
+                return <div className="movie-container">
+                    <h2>Movie Info</h2>  
                     <h2>{movie.title}</h2>
                     <img className="movie-img" src={posterImage + movie.poster_path}></img><br></br>
                       {sucks && <span id="star">☆</span>}
