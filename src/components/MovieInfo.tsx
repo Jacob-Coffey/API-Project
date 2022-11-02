@@ -25,7 +25,8 @@ export const MovieInfo = () => {
     }, []);
 
     return(
-        <div className="movie-info">   
+        <div className="movie-info"> 
+        <h2>Movie Info</h2>  
             {movieOverview.map((movie) => {
                 const sucks = movie.vote_average <= 6;
                 const average = 6 < movie.vote_average && movie.vote_average <= 7;

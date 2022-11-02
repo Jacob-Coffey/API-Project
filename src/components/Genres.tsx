@@ -8,8 +8,9 @@ export const Genres = () => {
 
     return(
         <div className="genres-container">
+            <h2>Genres</h2>
             {genres.map((genre, i) => {
-                return <Link to={`/genres/${genre.id}`} key={i}><button>{genre.name}</button></Link>
+                return <Link to={`/genres/${genre.id}/${genre.name}`} key={i}><button>{genre.name}</button></Link>
             })}
         </div>
     )

@@ -17,6 +17,7 @@ export const HomePage = () => {
 
     return (
         <div className="trending-Container">
+            <h2>Trending Movies</h2>
          {trendingMovies.map((movie, i) => {
             const sucks = movie.vote_average <= 6;
             const average = 6 < movie.vote_average && movie.vote_average <= 7;

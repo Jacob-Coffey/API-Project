@@ -28,7 +28,7 @@
     width: 133px;
     height: 30px;
     border-radius: 5%;
-    background-color: rgb(41, 41, 85);
+    background-color: goldenrod;
     color: black;
     font-size: 15px;
     font-weight: 300;
@@ -39,7 +39,7 @@
 
 
 .by-genre-container button:hover{
-    background-color: goldenrod;
+    background-color: rgb(41, 41, 85);
     color: white;
 }
 

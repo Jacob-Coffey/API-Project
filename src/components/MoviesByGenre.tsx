@@ -13,6 +13,7 @@ export const MoviesByGenre = () => {
     const [moviesList, setMoviesList] = useState<Result[]>([]);
 
     const id = useParams().id as string;
+    const name = useParams().name;
 
     useEffect(() => {
         getMoviesByGenre(id).then((response) => {
@@ -23,6 +24,7 @@ export const MoviesByGenre = () => {
     
         return(
             <div className="by-genre-container">
+                <h2>{name + ' Movies'}</h2>
                 {moviesList.map((movie, i) => {
                      const sucks = movie.vote_average <= 6;
                      const average = 6 < movie.vote_average && movie.vote_average <= 7;
