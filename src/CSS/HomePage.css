@@ -11,12 +11,12 @@
 .trending-Container{
     background-color: rgb(41, 41, 85);
     color: white;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 button{
     background-color: goldenrod;
-    /* background-color: rgb(41, 41, 85); */
     color: black;
 }
 

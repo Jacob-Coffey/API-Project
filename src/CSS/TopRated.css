@@ -11,7 +11,7 @@
 .top-rated-container{
     background-color: rgb(41, 41, 85);
     color: white;
-    height: 100vh;
+    height: 100%;
 }
 
 button{
