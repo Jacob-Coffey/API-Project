@@ -26,7 +26,7 @@ export const TopRated = () => {
                         <Link to={`/movieinfo/${top.id}`} key={i}><button>View More</button></Link>  
                         {!top.favorites ?
                     <button onClick={() => addMovie(top)}>Add to favorites</button> :
-                    <button onClick={() => removeMovie(top.title)}>Remove movie</button>
+                    <button onClick={() => removeMovie(top.title)}>Remove from favorites</button>
                     } 
                         </div>
             })}

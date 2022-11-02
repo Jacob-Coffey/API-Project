@@ -39,7 +39,7 @@ export const MoviesByGenre = () => {
                         <Link to={`/movieinfo/${movie.id}`}><button>View More</button></Link>  
                         {!movie.favorites ?
                     <button onClick={() => addMovie(movie)} key={i}>Add to favorites</button> :
-                    <button onClick={() => removeMovie(movie.title)} key={i}>Remove movie</button>
+                    <button onClick={() => removeMovie(movie.title)} key={i}>Remove from favorites</button>
                     } 
                     </div>
                 })}

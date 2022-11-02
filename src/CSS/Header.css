@@ -21,7 +21,6 @@ ul {
     list-style-type: none;
     margin-left: 0px;
     padding: 0px;
-    /* display: flex; */
 }
 
 li{
@@ -48,10 +47,10 @@ button:hover{
 }
 
 
-@media screen and (min-width:480px) {
+@media screen and (min-width:768px) {
 
     .nav-bar{
-         display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     }

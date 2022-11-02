@@ -26,7 +26,7 @@ export const FavoritesPage = () => {
                     {great && <><span id="star">☆</span><span id="star">☆</span><span id="star">☆</span></>}
                     <br></br>
                     <Link to={`/movieinfo/${movie.id}`}><button>View More</button></Link> 
-                    <button onClick={() => removeMovie(movie.title)} key={i}>Remove movie</button>
+                    <button onClick={() => removeMovie(movie.title)} key={i}>Remove from favorites</button>
                     </div>
          })}
         </div>

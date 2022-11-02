@@ -6,7 +6,7 @@
 
 .by-genre{
     width: 350px;
-    height: 220px;
+    height: 250px;
     display: inline-block;
     background-color: rgb(59, 59, 124);
     margin: 8px;
@@ -19,18 +19,17 @@
     background-color: rgb(41, 41, 85);
     color: white;
     height: 100%;
-    /* height: 100vh; */
     padding: 30px 30px;
 
 }
 
 .by-genre-container button{
-    width: 133px;
-    height: 30px;
+    width: 150px;
+    height: 47px;
     border-radius: 5%;
     background-color: goldenrod;
     color: black;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 300;
     font-family: 'Kanit', sans-serif;
     margin: 2px;
@@ -44,11 +43,6 @@
 }
 
 @media screen and (min-width: 768px){
-  
-    
-/* .trending-Container{
-    height: 100vh;
-} */
 
 .by-genre-container{
     background-color: rgb(41, 41, 85);
