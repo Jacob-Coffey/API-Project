@@ -4,7 +4,7 @@ body{
 }
 .movie-container{
     margin: auto;
-    height: 100vh;
+    height: 100%;
     padding: 20px;
     /* text-align: center; */
     background: rgb(2,0,36);
@@ -42,7 +42,7 @@ button{
 @media screen and (min-width: 768px){
     .movie-container{
         margin: auto;
-        height: 100vh;
+        height: 100%;
         padding: 20px;
         text-align: center;
         background: rgb(2,0,36);
