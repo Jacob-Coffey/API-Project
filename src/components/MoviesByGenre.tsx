@@ -19,7 +19,7 @@ export const MoviesByGenre = () => {
         getMoviesByGenre(id).then((response) => {
             setMoviesList(response);
         })
-    }, []);
+    });
     
     
         return(
